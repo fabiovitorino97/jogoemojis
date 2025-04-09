@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Adivinhação</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Jogo de Adivinhação</h1>
+        <div id="level-selection">
+            <p>Escolha o nível do jogo:</p>
+            <button onclick="startGame('easy')">Fácil</button>
+            <button onclick="startGame('hard')">Difícil</button>
+        </div>
+        <div id="game" style="display: none;">
+            <p id="status">Embaralhando...</p>
+            <p id="question"></p>
+            <p id="attempts"></p>
+            <div id="positions">
+                <div class="card" id="top" onclick="checkAnswer('top')">
+                    <span class="front">Em cima</span>
+                    <span class="back"></span>
+                </div>
+                <div class="card" id="middle" onclick="checkAnswer('middle')">
+                    <span class="front">No meio</span>
+                    <span class="back"></span>
+                </div>
+                <div class="card" id="bottom" onclick="checkAnswer('bottom')">
+                    <span class="front">Embaixo</span>
+                    <span class="back"></span>
+                </div>
+            </div>
+            <button onclick="resetGame()">Nova Rodada</button>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
