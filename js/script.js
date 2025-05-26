@@ -9,6 +9,11 @@ let correctPosition = "";
 let attemptsLeft = 0;
 let maxAttempts = 0;
 
+// Referências aos elementos de áudio
+const winSound = document.getElementById("win-sound");
+const loseSound = document.getElementById("lose-sound");
+const errorSound = document.getElementById("error-sound");
+
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -55,13 +60,16 @@ function checkAnswer(selectedPosition) {
     if (selectedPosition === correctPosition) {
         document.getElementById("status").textContent = "Você acertou!";
         revealCard();
+        winSound.play(); // Toca o som de vitória
         attemptsLeft = 0; // Finaliza a rodada
     } else {
         if (attemptsLeft > 0) {
             document.getElementById("status").textContent = "Tente novamente!";
+            errorSound.play(); // Toca o som de erro
         } else {
             document.getElementById("status").textContent = "Você errou! Tentativas esgotadas.";
             revealCard();
+            loseSound.play(); // Toca o som de derrota
         }
     }
 
