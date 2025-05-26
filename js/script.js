@@ -11,7 +11,7 @@ let maxAttempts = 0;
 
 // Referências aos elementos de áudio
 const winSound = document.getElementById("win-sound");
-const loseSound = document.getElementById("lose-sound");
+const looseSound = document.getElementById("loose-sound");
 const errorSound = document.getElementById("error-sound");
 
 function shuffle(array) {
@@ -69,7 +69,7 @@ function checkAnswer(selectedPosition) {
         } else {
             document.getElementById("status").textContent = "Você errou! Tentativas esgotadas.";
             revealCard();
-            loseSound.play(); // Toca o som de derrota
+            looseSound.play(); // Toca o som de derrota
         }
     }
 
